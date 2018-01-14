@@ -22,6 +22,8 @@ services:
     environment: ['http.host=0.0.0.0', 'transport.host=127.0.0.1', 'ELASTIC_PASSWORD=${ELASTIC_PASSWORD}']
     ports: ['127.0.0.1:9200:9200']
     networks: ['stack']
+    volumes: 
+      - /home/ubuntu/MyLab/elastic_data1:/usr/share/elasticsearch/data
 
   kibana:
     image: docker.elastic.co/kibana/kibana:${TAG}
